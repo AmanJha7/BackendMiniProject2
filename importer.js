@@ -10,8 +10,9 @@ const notificationRoutes = require('./routes/notificationRoutes');
 const postRoutes = require('./routes/postRoutes');
 const restrictToLoggedinUserOnly = require('./middleware/auth')
 const authRoutes = require('./routes/authRoutes')
+const confessRoutes = require('./routes/confessRoutes')
 
 module.exports = {
     express,bodyParser,restrictToLoggedinUserOnly,authRoutes,postRoutes,notificationRoutes,blacklistRoutes,
-    userRoutes,logmiddleware,cookieParser,path,mongoose,
+    userRoutes,logmiddleware,cookieParser,path,mongoose,confessRoutes
 }

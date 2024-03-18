@@ -1,4 +1,4 @@
-const  { express,bodyParser,restrictToLoggedinUserOnly,authRoutes,postRoutes,notificationRoutes,blacklistRoutes,userRoutes,logmiddleware,cookieParser,path,mongoose,} = require('./importer');
+const  { express,bodyParser,restrictToLoggedinUserOnly,authRoutes,postRoutes,notificationRoutes,blacklistRoutes,userRoutes,logmiddleware,cookieParser,path,mongoose,confessRoutes} = require('./importer');
 require('dotenv').config()
 
 const app = express();
@@ -18,6 +18,7 @@ app.use('/users', restrictToLoggedinUserOnly , userRoutes);
 app.use('/blacklist', restrictToLoggedinUserOnly , blacklistRoutes);
 app.use('/notification', restrictToLoggedinUserOnly , notificationRoutes)
 app.use('/post', restrictToLoggedinUserOnly , postRoutes)
+app.use('/confess' , confessRoutes)
 app.use('/auth',authRoutes)
 
 // Connect to MongoDB
